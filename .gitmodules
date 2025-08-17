@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/rest-api-data-localizer"]
+	path = wp-content/plugins/rest-api-data-localizer
+	url = https://gitverse.ru/solj/rest-api-data-localizer.git
