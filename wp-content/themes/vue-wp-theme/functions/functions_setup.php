@@ -15,12 +15,44 @@ function vue_wordpress_setup()
     ) );
     register_nav_menus( array( // Регестрируем область навигации
         'main' => 'Main Menu',
-        'footerNav' => 'Footer Menu',
+        // 'footerNav' => 'Footer Menu',
     ) );
     add_theme_support( 'editor-styles' ); // Активируем поддержку стилей редактора
     add_editor_style( 'editor-style.css' ); // Подключаем файл стилей
 }
 
+
+/*
+ * Добавляем демо-меню при активации темы
+ */
+function vue_wp_theme_insert_demo_menu() {
+    // Проверяем, существует ли уже меню
+    $menu_name = 'main';
+    $menu_exists = wp_get_nav_menu_object($menu_name);
+
+    if (!$menu_exists) {
+        // Создаём меню
+        $menu_id = wp_create_nav_menu($menu_name);
+
+        // Добавляем пункты меню (пример)
+        wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title' => 'Главная',
+            'menu-item-url' => home_url('/'),
+            'menu-item-status' => 'publish'
+        ));
+        wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title' => 'Блог',
+            'menu-item-url' => home_url('/blog/'),
+            'menu-item-status' => 'publish'
+        ));
+
+        // Привязываем меню к области main
+        $locations = get_theme_mod('nav_menu_locations');
+        $locations['main'] = $menu_id;
+        set_theme_mod('nav_menu_locations', $locations);
+    }
+}
+add_action('after_switch_theme', 'vue_wp_theme_insert_demo_menu');
 
 
 
