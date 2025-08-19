@@ -1,4 +1,4 @@
-<?
+<?php
 $roots_includes = array(
   '/functions/functions_setup.php',
   '/functions/functions_scripts.php',
