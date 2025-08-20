@@ -142,7 +142,8 @@ vue-wp-theme/
 ## Работа с кастомными типами записей и полями
 Для управления типами записей и произвольными полями доступны следующие варианты:
 * Нативная настройка через `functions.php`.
-* Рекомендованный способ — использование плагина ACF ((Advanced Custom Fields)[https://ru.wordpress.org/plugins/advanced-custom-fields/]) для упрощения работы с контентом.
+* Рекомендованный способ — использование плагина ACF (Advanced Custom Fields) для упрощения работы с контентом.
+* * https://ru.wordpress.org/plugins/advanced-custom-fields/
 
 ## Настройка Tailwind CSS
 Для кастомизации стилей и создания собственных утилит используйте конфигурационный файл: `tailwind.config.js`.
