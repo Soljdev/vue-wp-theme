@@ -3,7 +3,9 @@ get_header();
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $per_page = RADL::get( 'state.site' )['posts_per_page'];
 $site = RADL::get( 'state.site' );
-$posts = RADL::get( 'state.posts', array( 'page' => 1, 'per_page' => $per_page ) ); ?>
+$posts = RADL::get( 'state.posts', array( 'page' => 1, 'per_page' => $per_page ) );
+$demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page ) );
+?>
 
 <main>
     <section>
@@ -29,7 +31,26 @@ $posts = RADL::get( 'state.posts', array( 'page' => 1, 'per_page' => $per_page )
                     </h2>
                     <p><?php echo $p['excerpt']['rendered']; ?></p>
             </article>
-            <pre class="dbg"><?php print_r($p);?></pre><?
+            <pre class="dbg"><?php //print_r($p);?></pre><?
+        } ?>
+
+        <?php
+        foreach ( $demos as $d ) {
+            set_query_var( 'vw_post', $d );
+            $d = get_query_var( 'vw_post' ); 
+            ?>
+            <article class="post">
+                <div class="post__content">
+                    <h2>
+                        <a 
+                            href="<?php echo $d['link']; ?>" 
+                            title="<?php echo $d['title']['rendered']; ?>"
+                            ><?php echo $d['title']['rendered']; ?>
+                        </a>
+                    </h2>
+                    <p><?php echo $d['excerpt']['rendered']; ?></p>
+            </article>
+            <pre class="dbg"><?php //print_r($d);?></pre><?
         } ?>
     </section>
 </main>
