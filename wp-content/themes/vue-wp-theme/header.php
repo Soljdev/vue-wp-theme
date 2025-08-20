@@ -9,5 +9,5 @@
     <div id="vue-wordpress-app">
         <? 
         set_query_var( 'vw_nav_menu', 'main' );
-        get_template_part('components/top-bar'); 
+        get_template_part('components/top-panel'); 
         ?>
