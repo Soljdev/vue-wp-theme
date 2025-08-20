@@ -20,7 +20,7 @@ $demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page 
             set_query_var( 'vw_post', $p );
             $p = get_query_var( 'vw_post' ); 
             ?>
-            <article class="post">
+            <article class="post dbg">
                 <div class="post__content">
                     <h2>
                         <a 
@@ -31,7 +31,7 @@ $demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page 
                     </h2>
                     <p><?php echo $p['excerpt']['rendered']; ?></p>
             </article>
-            <pre class="dbg"><?php //print_r($p);?></pre><?
+            <?
         } ?>
 
         <?php
