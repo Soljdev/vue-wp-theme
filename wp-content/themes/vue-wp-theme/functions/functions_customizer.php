@@ -3,7 +3,6 @@
  * functions_customizer.php
  * Добавляем настройки темы в раздел внешний вид
  */
-add_action( 'customize_register', 'true_customizer_init' );
 function true_customizer_init( $wp_customize ) {
     $transport = 'refresh';
 
@@ -236,8 +235,33 @@ function true_customizer_init( $wp_customize ) {
     }
 
 }
+add_action( 'customize_register', 'true_customizer_init' );
 
 
+/**
+ * Устанавливаем демо-значения для Customizer при активации темы
+ */
+function vue_wp_theme_insert_customizer_demo_data() {
+    // Проверяем, были ли уже добавлены демо-данные
+    if (get_option('vue_wp_theme_customizer_demo_data_installed')) {
+        return;
+    }
+
+    set_theme_mod('block_header_title', 'Демо заголовок шапки');
+    set_theme_mod('block_header_desc', 'Демо описание для шапки сайта');
+    set_theme_mod('block_footer_title', 'Демо заголовок подвала');
+    set_theme_mod('block_footer_desc', 'Демо описание подвала');
+    set_theme_mod('block_footer_copyright', '© 2025 Демо копирайт');
+
+    // Отметка, чтобы не добавлять повторно
+    update_option('vue_wp_theme_customizer_demo_data_installed', 1);
+}
+add_action('after_switch_theme', 'vue_wp_theme_insert_customizer_demo_data');
+
+
+/**
+ * Добавляем кастомный контрол для разделения секций в Customizer
+ */
 if( class_exists( 'WP_Customize_Control' ) ) {
 
     class Sub_Section_Heading_Custom_Control extends WP_Customize_Control {
