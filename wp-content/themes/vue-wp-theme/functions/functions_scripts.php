@@ -3,7 +3,7 @@
  * Load scripts and styles
  */
 function vue_wordpress_scripts() {
-    $ver = '0.2';
+    $ver = '0.3';
 
     // Styles
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), $ver );

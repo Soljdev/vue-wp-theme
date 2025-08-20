@@ -1,5 +1,5 @@
 # Vue-wp-theme
-ver 0.2
+ver 0.3
 
 ## Stack
 * VueJS v3
