@@ -7,3 +7,7 @@
 </head>
 <body style="--primary-color: <?=get_theme_mod('primary-color', '#FF0000');?>">
     <div id="vue-wordpress-app">
+        <? 
+        set_query_var( 'vw_nav_menu', 'main' );
+        get_template_part('components/top-bar'); 
+        ?>
