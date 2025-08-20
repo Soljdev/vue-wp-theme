@@ -1,10 +1,10 @@
 # Vue.js 3 WordPress ThemeStarter Template with Vue.js and Tailwind CSS
 Version 0.3
 
-### Описание
+## Описание
 Стартовый шаблон темы WordPress, интегрированный с Vue.js 3 и Tailwind CSS 3.4.12 для создания динамичных, адаптивных веб-приложений с технологией SPA. Шаблон предоставляет готовую инфраструктуру для разработки современных веб-приложений на базе WordPress.
 
-### Особенности
+## Особенности
 * **Vue.js 3** - современная версия фреймворка для создания интерактивных интерфейсов
 * **Tailwind CSS 3.4.12** - утилитарный CSS-фреймворк для создания кастомных дизайнов
 * * https://v3.tailwindcss.com
@@ -15,12 +15,12 @@ Version 0.3
 * **Модульная архитектура** - легко расширяемая структура проекта
 * **Оптимизированная производительность** - автоматическая оптимизация бандлов
 
-### Требования
+## Требования
 * Node.js версии 16+
 * NPM или Yarn
 * WordPress min v6.2+
 
-### Установка
+## Установка
 1. Клонируйте репозиторий в корень сайта WordPress:
 ```bash
 git clone https://gitverse.ru/solj/vue-wp-theme
@@ -37,8 +37,8 @@ git submodule update --init --recursive # Установка субмодуля 
 * Активируйте плагин REST API Data Localizer
 * Активируйте тему в разделе "Внешний вид"
 
-### Запуск разработки
-#### Настройка окружения
+## Запуск разработки
+### Настройка окружения
 1. Настройте конфигурацию Webpack:
 ```js
 // wp-content/themes/vue-wp-theme/webpack.dev.config.js
@@ -84,7 +84,7 @@ npm run dev
 npx tailwindcss -i ./src/input.css -o ./src/output.css --watch 
 ```
 
-#### Для сборки production версии:
+### Для сборки production версии:
 1. Настройте параметры сборки Webpack
 ```js
 // wp-content/themes/vue-wp-theme/webpack.prod.config.js
@@ -115,7 +115,7 @@ wp_enqueue_script('vue_wordpress.js', get_template_directory_uri() . '/dist/vue-
 npm run build
 ```
 
-### Структура проекта
+## Структура проекта
 ```
 vue-wp-theme/
 ├── dist/            # Статические файлы JS и CSS
@@ -134,27 +134,27 @@ vue-wp-theme/
 └── package.json     # Зависимости проекта
 ```
 
-### Использование REST API Data Localizer
+## Использование REST API Data Localizer
 * **REST API Data Localizer** — встроенная система для работы с локализацией данных через REST API.
 * * https://gitverse.ru/solj/rest-api-data-localizer (submodule)
 * * https://github.com/bshiluk/rest-api-data-localizer
 
-### Работа с кастомными типами записей и полями
+## Работа с кастомными типами записей и полями
 Для управления типами записей и произвольными полями доступны следующие варианты:
 * Нативная настройка через `functions.php`.
 * Рекомендованный способ — использование плагина ACF ((Advanced Custom Fields)[https://ru.wordpress.org/plugins/advanced-custom-fields/]) для упрощения работы с контентом.
 
-### Настройка Tailwind CSS
+## Настройка Tailwind CSS
 Для кастомизации стилей и создания собственных утилит используйте конфигурационный файл: `tailwind.config.js`.
 
-### Поддержка и вопросы
+## Поддержка и вопросы
 * Создавайте issue для сообщения об ошибках, вопросов и предложений
 * Открыты к pull-реквестам
 
-### Лицензия
+## Лицензия
 Проект распространяется под лицензией MIT. Смотрите файл LICENSE для деталей.
 
-### Зависимости
+## Зависимости
 * **Vue.js 3** - https://vuejs.org
 * **Tailwind CSS** - https://tailwindcss.com
 * **REST API Data Localizer** - https://gitverse.ru/solj/rest-api-data-localizer
