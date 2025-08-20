@@ -1,0 +1,27 @@
+@tailwind base;
+
+@layer base {
+}
+
+@tailwind components;
+
+@layer components {
+
+    /* Wrapper */
+        #wrapper {
+            @apply p-0 w-full relative
+        }
+
+        #wrapper section {
+            @apply grid relative
+        }
+
+    /* Posts */
+    .post {
+        outline: 1px dashed #f00;
+        @apply p-4 my-8 text-xs
+    }
+
+}
+
+@tailwind utilities;
