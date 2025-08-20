@@ -81,6 +81,7 @@ function create_demo_post_type() {
         'publicly_queryable' => true,                 // Доступен для запросов
         'show_ui' => true,                            // Показывать в админке
         'show_in_menu' => true,                       // Показывать в меню админки
+        'show_in_rest'       => true,                 // Показывать в rest API
         'query_var' => true,                          // Использовать в запросах
         'rewrite' => array('slug' => 'demo'),         // Слаг для URL
         'capability_type' => 'post',                  // Права доступа как у постов
