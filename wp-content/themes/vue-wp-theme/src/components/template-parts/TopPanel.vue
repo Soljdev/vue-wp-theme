@@ -6,7 +6,7 @@
       <div class="logotype" v-if="logo" @click="$router.push('/')">
         <img class="logo max-h-6 md:max-h-10" :src="logo.source_url" :alt="site.name" />
       </div>
-      <span v-else>{{ site.name }}</span>
+      <span v-else @click="$router.push('/')">{{ site.name }}</span>
 
       <div class="grow lg:hidden flex"></div>
 
@@ -231,10 +231,11 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #2d2d2bdb;
+    background: #fff;
     z-index: 30;
     /* padding: 1rem 0; */
     font-size: 12px;
+    outline: 1px dotted rgb(4, 121, 0);
   }
 
   .top-panel-container {

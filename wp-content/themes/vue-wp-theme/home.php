@@ -7,14 +7,13 @@ $posts = RADL::get( 'state.posts', array( 'page' => 1, 'per_page' => $per_page )
 $demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page ) );
 ?>
 
-<main>
-    <section>
-        <pre class="dbg">
-            $site = RADL::get( 'state.site' );
+<main id="wrapper">
+    <pre class="dbg">
+        $site = RADL::get( 'state.site' );
 <?php print_r($site);?>
-        </pre>
-
-
+    </pre>
+    <!-- // posts -->
+    <section>
         <?php
         foreach ( $posts as $p ) {
             set_query_var( 'vw_post', $p );
@@ -33,7 +32,9 @@ $demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page 
             </article>
             <?
         } ?>
-
+    </section>
+    <!-- // demos -->
+    <section>
         <?php
         foreach ( $demos as $d ) {
             set_query_var( 'vw_post', $d );
@@ -50,7 +51,7 @@ $demos = RADL::get( 'state.demo',   array( 'page' => 1, 'per_page' => $per_page 
                     </h2>
                     <p><?php echo $d['excerpt']['rendered']; ?></p>
             </article>
-            <pre class="dbg"><?php //print_r($d);?></pre><?
+            <?
         } ?>
     </section>
 </main>

@@ -5,7 +5,7 @@ $per_page = RADL::get( 'state.site' )['posts_per_page'];
 $category_id = get_query_var('cat');
 $category = RADL::get( 'state.categories', $category_id );
 $posts = RADL::get( 'state.posts', array( 'page' => $paged, 'per_page' => $per_page, 'categories' => $category_id ) ); ?>
-<main>
+<main id="wrapper">
     <header>
       <h1>Category for <?php echo $category['name']; ?></h1>
     </header>

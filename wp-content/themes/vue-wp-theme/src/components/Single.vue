@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <main>
+  <main id="wrapper">
     <article v-if="post">
       <header>
         <ResponsiveImage

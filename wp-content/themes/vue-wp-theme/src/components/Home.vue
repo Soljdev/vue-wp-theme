@@ -1,10 +1,10 @@
 <template>
-  <main class="dbg">
+  <main id="wrapper">
 
-        <pre class="dbg">
-            site = RADL::get( 'state.site' );
+    <pre class="dbg">
+        site = RADL::get( 'state.site' );
 {{ site }}
-        </pre>
+    </pre>
     <!-- // posts -->
     <section v-if="posts.length">
       <article class="post dbg" v-for="post in posts"

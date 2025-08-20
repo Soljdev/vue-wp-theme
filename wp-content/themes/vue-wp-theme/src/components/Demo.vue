@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="wrapper">
     <!-- // demos -->
     <section v-if="demos.length">
       <article class="post dbg" v-for="demo in demos"

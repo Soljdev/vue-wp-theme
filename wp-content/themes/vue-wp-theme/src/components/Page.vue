@@ -1,8 +1,7 @@
 <!-- @format -->
 
 <template>
-  <div>
-    <main class="">
+  <main id="wrapper">
       <div v-if="page" class="container">
         <div class="w-full content-frame">
           <h1 v-html="page.title.rendered" class="mb-16"></h1>
@@ -10,7 +9,6 @@
         </div>
       </div>
     </main>
-  </div>
 </template>
 
 <script>

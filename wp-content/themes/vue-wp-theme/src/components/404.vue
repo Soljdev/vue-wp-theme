@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-  <main class="min-h-[80vh] flex py-32">
+  <main class="min-h-[80vh] flex py-32" id="wrapper">
     <div class="container flex items-end justify-end">
       <div
         class="content-frame"

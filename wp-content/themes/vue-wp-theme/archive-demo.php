@@ -4,7 +4,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $per_page = RADL::get( 'state.site' )['posts_per_page'];
 $state = RADL::get( 'state' );
 $posts = RADL::get( 'state.demo', array( 'page' => $paged, 'per_page' => $per_page) ); ?>
-<main>
+<main id="wrapper">
     <header>
       <h1>Archive for DEMO</h1>
     </header>

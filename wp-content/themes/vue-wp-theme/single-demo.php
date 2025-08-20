@@ -1,7 +1,7 @@
 <?php
 get_header();
 $single = RADL::get( 'state.demo', get_the_ID() ); ?>
-<main>
+<main id="wrapper">
     <article>
         <header>
             <h1><?php echo $single['title']['rendered']; ?></h1>

@@ -8,7 +8,7 @@ function vue_wordpress_scripts() {
     // Styles
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), $ver );
     // wp_enqueue_style( 'editor-style', get_template_directory_uri() . '/editor-style.css', array(), $ver ); 
-    wp_enqueue_style('vue_wordpress', get_template_directory_uri() . '/dist/vue-wordpress.css', array(), $ver );
+    // wp_enqueue_style('vue_wordpress', get_template_directory_uri() . '/dist/vue-wordpress.css', array(), $ver );
 
     // Scripts
     // Enable For Production - Disable for Development

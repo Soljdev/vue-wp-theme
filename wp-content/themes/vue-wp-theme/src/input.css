@@ -9,11 +9,12 @@
 
     /* Wrapper */
         #wrapper {
-            @apply p-0 w-full relative
+            outline: 1px solid var(--primary-color, #00f);
+            @apply p-4 max-w-screen-md mx-auto relative m-4 
         }
 
         #wrapper section {
-            @apply grid relative
+            @apply relative
         }
 
     /* Posts */
