@@ -11,8 +11,8 @@ Text Domain: vue-wp
   display: block;
   width: 100%;
   height: auto;
-  margin: 32 auto;
-  outline: 1px dashed #f00;
+  margin: 16px auto;
+  outline: 1px dashed var(--primary-color,#00f);
   padding: 16px;
   box-sizing: border-box;
   font-size: 11px;  
