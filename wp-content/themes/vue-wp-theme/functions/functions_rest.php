@@ -78,7 +78,6 @@ function vue_wordpress_menus() {
         $menu_items = wp_get_nav_menu_items( $id );
 
         foreach ( $menu_items as $i ) {
-
             array_push( $menu, array(
                 'id'      => $i->ID,
                 'parent'  => $i->menu_item_parent,

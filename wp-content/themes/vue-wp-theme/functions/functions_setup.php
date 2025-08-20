@@ -55,7 +55,6 @@ function vue_wp_theme_insert_demo_menu() {
 add_action('after_switch_theme', 'vue_wp_theme_insert_demo_menu');
 
 
-
 /*
  * Добавляем Кастомный тип записи
  * Альтернативный вариант nocode: 
@@ -101,9 +100,8 @@ function create_demo_post_type() {
         'taxonomies' => array('category', 'post_tag') // Таксономии
     ));
 }
-
-// Хук для регистрации типа записи
 add_action('init', 'create_demo_post_type');
+
 
 /*
  * Добавляем Демо-данные в тип 'demo'
@@ -128,3 +126,4 @@ function vue_wp_theme_insert_demo_data() {
     update_option('vue_wp_theme_demo_data_installed', 1);
 };
 add_action('after_switch_theme', 'vue_wp_theme_insert_demo_data');
+

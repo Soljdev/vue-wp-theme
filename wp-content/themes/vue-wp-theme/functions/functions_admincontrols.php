@@ -8,7 +8,6 @@ functions_admincontrols.php
 /*
  * Скрываем лишние разделы и пункты меню
  */
-add_action('admin_menu', 'remove_admin_menu');
 function remove_admin_menu() {
     // 	remove_menu_page('options-general.php');    // Удаляем раздел Настройки
     //  remove_menu_page('edit.php');               // Записи
@@ -22,8 +21,8 @@ function remove_admin_menu() {
     remove_menu_page('edit-comments.php');      // Комментарии
     //  remove_menu_page('link-manager.php');       // Ссылки
 }
+add_action('admin_menu', 'remove_admin_menu');
  
-add_action("admin_menu", "remove_menus", 99999);
 function remove_menus()
 {
     // remove_submenu_page("edit.php", "edit-tags.php?taxonomy=post_tag");  // «Записи» - «Метки»
@@ -32,12 +31,12 @@ function remove_menus()
     remove_submenu_page("options-general.php", "options-discussion.php");   // «Настройки» - «Обсуждения»
     remove_submenu_page('options-general.php', "options-writing.php");   // options-writing.php
 }
+add_action("admin_menu", "remove_menus", 99999);
 
 
 /*
  * Скрываем лишние типы записей из виджета "На виду"
  */
-add_filter( 'dashboard_glance_items', 'remove_default_glance_items', 10, 1 );
 function remove_default_glance_items( $items ) {
     $items_to_remove = array(
         // 'posts',
@@ -54,12 +53,12 @@ function remove_default_glance_items( $items ) {
 
     return $items;
 }
+add_filter( 'dashboard_glance_items', 'remove_default_glance_items', 10, 1 );
 
 
 /*
  * Добавляем свои типы записей в виджет "На виду"
  */
-add_filter( 'dashboard_glance_items', 'custom_glance_items', 10, 1 );
 function custom_glance_items( $items = array() ) {
     $post_types = array( 'demo' ); // типы записей
     
@@ -84,12 +83,12 @@ function custom_glance_items( $items = array() ) {
     
     return $items;
 }
+add_filter( 'dashboard_glance_items', 'custom_glance_items', 10, 1 );
 
 
 /*
  * Правим стили боковой панели в админке
  */
-add_action('admin_head', 'custom_admin_styles');
 function custom_admin_styles() {
     echo '<style>
         #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
@@ -101,6 +100,7 @@ function custom_admin_styles() {
 		#adminmenu .wp-submenu { left: 220px }
     </style>';
 }
+add_action('admin_head', 'custom_admin_styles');
 
 
 /*
