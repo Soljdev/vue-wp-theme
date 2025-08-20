@@ -1,4 +1,5 @@
-# rvwp-starter
+# Vue-wp-theme
+ver 0.1
 
 ## Stack
 * VueJS v3
