@@ -6,3 +6,14 @@ Description: Шаблон Vue JS для Wordpress
 Version:     0.1
 Text Domain: vue-wp
 */
+
+.dbg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 32 auto;
+  outline: 1px dashed #f00;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 11px;  
+}
