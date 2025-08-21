@@ -64,6 +64,7 @@ export default {
       if (this.category) {
         return this.$store.getters.requestedItems(this.postsRequest)
       }
+      return [];
     },
     title() {
       return `CategoryArchive for ${this.category ? this.category.name : ''}`
