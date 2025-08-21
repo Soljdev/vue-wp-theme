@@ -1,5 +1,5 @@
 # WordPress ThemeStarter Template with Vue.js and Tailwind CSS
-Version 0.3
+Version 0.4
 
 ## Описание
 Стартовый шаблон темы WordPress, интегрированный с Vue.js 3 и Tailwind CSS 3.4.12 для создания динамичных, адаптивных веб-приложений с технологией SPA. Шаблон предоставляет готовую инфраструктуру для разработки современных веб-приложений на базе WordPress.
