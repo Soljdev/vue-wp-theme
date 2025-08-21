@@ -1,7 +1,6 @@
 // Route components
 const Home = () => import(/* webpackChunkName: "Home" */ '@/components/Home')
 const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/404');
-// const AuthorArchive = () => import(/* webpackChunkName: "AuthorArchive" */ '@/components/AuthorArchive');
 // const DateArchive = () => import(/* webpackChunkName: "DateArchive" */ '@/components/DateArchive');
 const CategoryArchive = () => import(/* webpackChunkName: "CategoryArchive" */ '@/components/CategoryArchive');
 // const TagArchive = () => import(/* webpackChunkName: "TagArchive" */ '@/components/TagArchive');
@@ -48,12 +47,6 @@ export default [
     component: NotFound,
     name: '404'
   },
-  // {
-  //   path: paths.authorArchive,
-  //   component: AuthorArchive,
-  //   name: 'AuthorArchive',
-  //   props: route => (Object.assign(route.params, { page: pageFromPath(route.path) }))
-  // },
   // {
   //   path: paths.dateArchive,
   //   component: DateArchive,
