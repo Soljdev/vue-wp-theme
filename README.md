@@ -1,4 +1,4 @@
-# Vue.js 3 WordPress ThemeStarter Template with Vue.js and Tailwind CSS
+# WordPress ThemeStarter Template with Vue.js and Tailwind CSS
 Version 0.3
 
 ## Описание
