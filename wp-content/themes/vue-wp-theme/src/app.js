@@ -11,7 +11,9 @@ const app = createApp(App)
 
 router.isReady().then(() => {
   const params = new URLSearchParams(window.location.search)
-  if (!params.has('novue')) {
-    app.mount('#vue-wordpress-app')
-  }
+  if (!params.has('novue') && document.getElementById('vue-wordpress-app')) {
++    app.mount('#vue-wordpress-app');
+   } else {
+    console.warn('Vue app not mounted because "novue" query parameter is present or mount point is missing.');
+   }
 })
