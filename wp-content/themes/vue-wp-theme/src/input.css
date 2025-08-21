@@ -10,7 +10,8 @@
     /* Wrapper */
         #wrapper {
             outline: 1px solid var(--primary-color, #00f);
-            @apply p-4 max-w-screen-md mx-auto relative m-4 
+            max-width: calc(100% - 32px);
+            @apply py-4 px-12 w-full mx-auto relative my-8 
         }
 
         #wrapper section {
@@ -20,7 +21,7 @@
     /* Posts */
     .post {
         outline: 1px dashed #f00;
-        @apply p-4 my-8 text-xs
+        @apply p-4 mt-4 mb-8 text-xs
     }
 
 }

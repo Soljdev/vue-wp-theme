@@ -596,12 +596,17 @@ video {
 
 #wrapper {
   outline: 1px solid var(--primary-color, #00f);
+  max-width: calc(100% - 32px);
   position: relative;
-  margin: 1rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 768px;
-  padding: 1rem
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem
 }
 
 #wrapper section {
@@ -612,7 +617,7 @@ video {
 
 .post {
   outline: 1px dashed #f00;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   padding: 1rem;
   font-size: 12px;
@@ -663,15 +668,8 @@ video {
   margin: 0px;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
-.mb-8 {
+.my-8 {
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -681,6 +679,10 @@ video {
 
 .ml-\[-1rem\] {
   margin-left: -1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .block {
@@ -716,10 +718,6 @@ video {
   max-height: 1.5rem;
 }
 
-.min-h-\[80vh\] {
-  min-height: 80vh;
-}
-
 .w-6 {
   width: 1.5rem;
 }
@@ -752,16 +750,8 @@ video {
   flex-direction: column;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .items-center {
   align-items: center;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-between {
@@ -839,15 +829,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
-.text-right {
-  text-align: right;
-}
-
 .text-lg {
   font-size: 20px;
   line-height: 28px;
@@ -856,10 +837,6 @@ video {
 .text-sm {
   font-size: 14px;
   line-height: 20px;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .text-black {
