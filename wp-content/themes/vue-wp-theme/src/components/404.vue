@@ -1,16 +1,11 @@
 <!-- @format -->
 
 <template>
-  <main class="min-h-[80vh] flex py-32" id="wrapper">
-    <div class="container flex items-end justify-end">
-      <div
-        class="content-frame"
-        :style="`--post-bg: url(${site.template_url}/img/bg.png)`"
-      >
-        <h1 class="text-right text-white font-bold mb-12">{{ title }}</h1>
-        <p class="mb-8">{{ message }}</p>
-        <a class="text-cf-primary" href="/">Go Home</a>
-      </div>
+  <main id="wrapper">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <p class="my-8">{{ message }}</p>
+        <a href="/">Go Home</a>
     </div>
   </main>
 </template>

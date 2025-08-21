@@ -10,5 +10,8 @@ const app = createApp(App)
   .use(store)
 
 router.isReady().then(() => {
-  app.mount('#vue-wordpress-app')
+  const params = new URLSearchParams(window.location.search)
+  if (!params.has('novue')) {
+    app.mount('#vue-wordpress-app')
+  }
 })

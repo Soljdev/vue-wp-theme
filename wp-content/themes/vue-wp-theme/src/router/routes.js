@@ -3,7 +3,7 @@ const Home = () => import(/* webpackChunkName: "Home" */ '@/components/Home')
 const NotFound = () => import(/* webpackChunkName: "NotFound" */ '@/components/404');
 // const AuthorArchive = () => import(/* webpackChunkName: "AuthorArchive" */ '@/components/AuthorArchive');
 // const DateArchive = () => import(/* webpackChunkName: "DateArchive" */ '@/components/DateArchive');
-// const CategoryArchive = () => import(/* webpackChunkName: "CategoryArchive" */ '@/components/CategoryArchive');
+const CategoryArchive = () => import(/* webpackChunkName: "CategoryArchive" */ '@/components/CategoryArchive');
 // const TagArchive = () => import(/* webpackChunkName: "TagArchive" */ '@/components/TagArchive');
 const Single = () => import(/* webpackChunkName: "Single" */ '@/components/Single');
 const Page = () => import(/* webpackChunkName: "Page" */ '@/components/Page');
@@ -60,12 +60,12 @@ export default [
   //   name: 'DateArchive',
   //   props: route => (Object.assign(route.params, { page: pageFromPath(route.path) }))
   // },
-  // {
-  //   path: paths.categoryArchive,
-  //   component: CategoryArchive,
-  //   name: 'CategoryArchive',
-  //   props: route =>  (Object.assign(route.params, { slug: categorySlugFromParams(route.params), page: pageFromPath(route.path) } ))
-  // },
+  {
+    path: paths.categoryArchive,
+    component: CategoryArchive,
+    name: 'CategoryArchive',
+    props: route =>  (Object.assign(route.params, { slug: categorySlugFromParams(route.params), page: pageFromPath(route.path) } ))
+  },
   // {
   //   path: paths.tagArchive,
   //   component: TagArchive,

@@ -87,9 +87,7 @@
       },
 
       offMenu() {
-        // Здесь добавьте логику, которую нужно выполнить перед уходом
-        console.log('Выполняется перед уходом');
-        this.showMenu = false; // Например, скрываем меню
+        this.showMenu = false; 
       },
 
       updateScroll() {
