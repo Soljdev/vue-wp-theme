@@ -10,13 +10,20 @@ export default {
       if (showLoading) {
         commit('SET_LOADING', true)
       }
-      return fetchSingle({ type, params: { slug } }).then(({ data: [ item ] }) => {
-        commit('ADD_ITEM', { type, item  })
-        if (showLoading) {
-          commit('SET_LOADING', false)
-        }
-        return item
-      })
+      return fetchSingle({ type, params: { slug } })
+        .then(({ data: [ item ] }) => {
+          commit('ADD_ITEM', { type, item  })
+          if (showLoading) {
+            commit('SET_LOADING', false)
+          }
+          return item
+        })
+        .catch(error => {
+          console.error("Ошибка получения данных (fetchSingle):", error);
+          if (showLoading) {
+            commit('SET_LOADING', false)
+          }
+        });
     }
   },
 
@@ -25,16 +32,23 @@ export default {
       if ( showLoading ) {
         commit('SET_LOADING', true)
       }
-      return fetchSingleById({ type, id, batch }).then(({ data }) => {
-        if (batch) {
-          data.forEach(item => commit('ADD_ITEM', { type, item }))
-        } else {
-          commit('ADD_ITEM', { type, item: data  })
-        }
-        if (showLoading) {
-          commit('SET_LOADING', false)
-        }
-      })
+      return fetchSingleById({ type, id, batch })
+        .then(({ data }) => {
+          if (batch) {
+            data.forEach(item => commit('ADD_ITEM', { type, item }))
+          } else {
+            commit('ADD_ITEM', { type, item: data  })
+          }
+          if (showLoading) {
+            commit('SET_LOADING', false)
+          }
+        })
+        .catch(error => {
+          console.error("Ошибка получения данных (fetchSingleById):", error);
+          if (showLoading) {
+            commit('SET_LOADING', false)
+          }
+        });
     }
   },
 
@@ -51,6 +65,12 @@ export default {
             commit('SET_LOADING', false)
           }
         })
+        .catch(error => {
+          console.error("Ошибка получения данных (getItems):", error);
+          if (showLoading) {
+            commit('SET_LOADING', false)
+          }
+        });
     }
   },
 
