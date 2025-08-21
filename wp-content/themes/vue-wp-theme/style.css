@@ -17,3 +17,8 @@ Text Domain: vue-wp
   box-sizing: border-box;
   font-size: 11px;  
 }
+
+pre.dbg {
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
