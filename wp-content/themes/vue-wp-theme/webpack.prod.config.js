@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const IncrementVersionPlugin = require('./increment-version-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -15,15 +16,72 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.php$/,
+        use: [
+          {
+            loader: 'replace-loader',
+            options: {
+              replacements: [
+                {
+                  pattern: /\$ver="([0-9]+\.[0-9]+)"/g,
+                  replacement: (match, version) => {
+                    return `$ver="${IncrementVersionPlugin.incrementVersion(version)}"`;
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        include: path.resolve(__dirname, 'functions')
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
       {
         test: /\.css$/,
         use: [
+          {
+            loader: 'replace-loader',
+            options: {
+              replacements: [
+                {
+                  pattern: /Version: ([0-9]+\.[0-9]+)/g,
+                  replacement: (match, version) => {
+                    return `Version: ${IncrementVersionPlugin.incrementVersion(version)}`;
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        include: path.resolve(__dirname, 'styles.css')
+      },
+      {
+        test: /\.css$/,
+        use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'replace-loader',
+            options: {
+              replacements: [
+                {
+                  pattern: /Version ([0-9]+\.[0-9]+)/g,
+                  replacement: (match, version) => {
+                    return `Version ${IncrementVersionPlugin.incrementVersion(version)}`;
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        include: path.resolve(__dirname, 'README.md')
       },
       {
         test: /\.(jpg|png|gif|woff|eot|ttf|svg)/,
@@ -52,6 +110,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new IncrementVersionPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'vue-wordpress.css'
