@@ -23,7 +23,7 @@ export default {
   demo: `/demo/`,
   singleDemo: `/demo/:slug/`,
   // authorArchive: `${defaultTaxonomyBase}author/:slug/${paginateParam}`,
-  // categoryArchive: category_base ? `/${category_base}/${tagToParam.category}/${paginateParam}` : `${defaultTaxonomyBase}category/${tagToParam.category}/${paginateParam}`,
+  categoryArchive: category_base ? `/${category_base}/${tagToParam.category}/${paginateParam}` : `${defaultTaxonomyBase}category/${tagToParam.category}/${paginateParam}`,
   // dateArchive: `${defaultTaxonomyBase}:year(\\d{4})/:month(\\d{2})?/:day(\\d{2})?/${paginateParam}`,
   single: permalink_structure.replace(/\%[a-z_]+\%/g, match => tagToParam[match.slice(1,-1)]).slice(0,-1),
   // tagArchive: tag_base ? `/${tag_base}/:slug/${paginateParam}` : `${defaultTaxonomyBase}tag/:slug/${paginateParam}`,
