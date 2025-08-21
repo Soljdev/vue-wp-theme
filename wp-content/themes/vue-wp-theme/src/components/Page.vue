@@ -2,13 +2,16 @@
 
 <template>
   <main id="wrapper">
-      <div v-if="page" class="container">
-        <div class="w-full content-frame">
-          <h1 v-html="page.title.rendered" class="mb-16"></h1>
-          <div v-html="page.content.rendered"></div>
-        </div>
-      </div>
-    </main>
+    <article v-if="page" class="container">
+      <h1 v-html="page.title.rendered"></h1>
+      <div v-html="page.content.rendered"></div>
+      <pre class="dbg">
+        page.vue
+        page()
+        {{ page }}
+      </pre>
+    </article>
+  </main>
 </template>
 
 <script>
