@@ -5,18 +5,21 @@
     <TopPanel
       name="main"
       @toggle-menu="toggleMenu"
-      :showMenu="this.showMenu"
+      :showMenu="showMenu"
     />
-    <transition
-      name="fade"
-      mode="out-in"
-      @after-leave="updateScroll"
-      @before-leave="offMenu"
-    >
-      <router-view :key="$route.path" v-slot="slotProps">
-        <component :is="slotProps.Component" />
-      </router-view>
-    </transition>
+    <router-view v-slot="{ Component, route }">
+      <transition
+        name="fade"
+        mode="out-in"
+        @after-leave="updateScroll"
+        @before-leave="offMenu"
+      >
+        <component
+          :is="Component"
+          :key="route.path"
+        />
+      </transition>
+    </router-view>
 
     <transition name="fade">
       <SiteLoading v-if="loading" />
@@ -37,7 +40,6 @@
       return {
         site: this.$store.state.site,
         showMenu: false,
-        offMenu: undefined,
       };
     },
     computed: {
@@ -78,6 +80,16 @@
           let path = a.href.replace(this.site.url, '');
           this.$router.push(path);
         }
+      },
+
+      toggleMenu() {
+        this.showMenu = !this.showMenu;
+      },
+
+      offMenu() {
+        // Здесь добавьте логику, которую нужно выполнить перед уходом
+        console.log('Выполняется перед уходом');
+        this.showMenu = false; // Например, скрываем меню
       },
 
       updateScroll() {
