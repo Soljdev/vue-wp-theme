@@ -1,22 +1,18 @@
 <template>
   <main id="wrapper">
-
-    <pre class="dbg">
-        site = RADL::get( 'state.site' );
-{{ site }}
-    </pre>
-    <!-- // posts -->
-    <section v-if="posts.length">
-      <article class="post dbg" v-for="post in posts"
-        :key="post.id"
-        :post="post">
-        <ResponsiveImage
-          v-if="post.featured_media"
-          class="post__featured-media"
-          :media-id="post.featured_media"
-          :sizes="'(max-width: 680px) 40vw, 400px'"
-        />
-        <div class="post__content">
+    <div class="container">
+      <pre class="dbg">
+        home.vue
+        site: this.$store.state.site
+        {{ site }}
+      </pre>
+      <!-- // posts -->
+      this.getPosts()
+      <section class="mb-8" v-if="posts.length">
+        <article class="post dbg" v-for="post in posts"
+          :key="post.id"
+          :post="post"
+        >
           <h2>
             <a 
               :href="post.link"
@@ -25,21 +21,15 @@
             ></a>
           </h2>
           <div v-html="post.excerpt.rendered"></div>
-        </div>
-      </article>
-    </section>
-    <!-- // demos -->
-    <section v-if="demos.length">
-      <article class="post dbg" v-for="demo in demos"
-        :key="demo.id"
-        :demo="demo">
-        <ResponsiveImage
-          v-if="demo.featured_media"
-          class="post__featured-media"
-          :media-id="demo.featured_media"
-          :sizes="'(max-width: 680px) 40vw, 400px'"
-        />
-        <div class="post__content">
+        </article>
+      </section>
+      <!-- // demos -->
+      this.getDemos()
+      <section class="mb-8" v-if="demos.length">
+        <article class="post dbg" v-for="demo in demos"
+          :key="demo.id"
+          :demo="demo"
+        >
           <h2>
             <a 
               :href="demo.link"
@@ -48,9 +38,9 @@
             ></a>
           </h2>
           <div v-html="demo.excerpt.rendered"></div>
-        </div>
-      </article>
-    </section>
+        </article>
+      </section>
+    </div>
   </main>
 </template>
 
