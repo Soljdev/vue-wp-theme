@@ -2,18 +2,12 @@
 
 <template>
   <main id="wrapper">
-    <article v-if="post">
-      <header>
-        <ResponsiveImage
-          v-if="post.featured_media"
-          :media-id="post.featured_media"
-          :sizes="'(max-width: 1200px) 100vw, 1200px'"
-        />
-        <h1 v-html="post.title.rendered"></h1>
-      </header>
+    <article class="container" v-if="post">
+      <h1 v-html="post.title.rendered"></h1>
       <div v-html="post.content.rendered"></div>
       <pre class="dbg">
-        single = RADL::get( 'state.posts', get_the_ID() );
+        single.vue
+        getPost()
         {{ post }}
       </pre>
     </article>
