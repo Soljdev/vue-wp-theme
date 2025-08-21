@@ -1,6 +1,11 @@
 <!-- @format -->
 
 <template>
+<footer>
+    <div class="container" v-if="site.blocks?.footer?.copyright">
+        {{ site.blocks.footer.copyright }}
+    </div>
+</footer>
 </template>
 
 <script>
