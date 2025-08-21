@@ -19,6 +19,7 @@ export default {
       })
     }
   },
+
   getSingleById({ getters, commit }, { type, id, showLoading = false, batch = false }) {
     if ( ! getters.singleById({ type, id }) ) {
       if ( showLoading ) {
@@ -36,6 +37,7 @@ export default {
       })
     }
   },
+
   getItems({ getters, commit }, { type, params, showLoading = false }) {
     if ( ! getters.request({ type, params }) ) {
       if (showLoading) {
@@ -51,14 +53,17 @@ export default {
         })
     }
   },
+
   updateDocTitle ({ state, commit }, { parts = [], sep = ' – ' }) {
     commit('SET_DOC_TITLE', parts.join(sep))
     document.title = state.site.docTitle
   },
+
   setPhone({ commit }, phone) {
-      commit('UPDATE_PHONE', phone);
-    },
-    setChangePhone({ commit }, value) {
-      commit('SET_CHANGE_PHONE', value);
-    }
+    commit('UPDATE_PHONE', phone);
+  },
+
+  setChangePhone({ commit }, value) {
+    commit('SET_CHANGE_PHONE', value);
+  }
 }
