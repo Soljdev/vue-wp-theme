@@ -3,8 +3,8 @@
 <template>
   <div class="top-panel py-3">
     <div class="top-panel-container container gap-8">
-      <div class="logotype" v-if="logo" @click="$router.push('/')">
-        <img class="logo max-h-6 md:max-h-10" :src="logo.source_url" :alt="site.name" />
+      <div class="logotype" v-if="logo">
+        <img class="logo max-h-6 md:max-h-10" :src="logo.source_url" :alt="site.name"  @click="$router.push('/')"/>
       </div>
       <span v-else @click="$router.push('/')">{{ site.name }}</span>
 
@@ -154,7 +154,7 @@
                       :href="subItem.url"
                       :target="subItem.target"
                       :title="subItem.title"
-                      class="block transition-colors text-nowrap px-4 :hovertext-black hover:bg-black transition-colors"
+                      class="block text-nowrap px-4 :hovertext-black hover:bg-black transition-colors"
                     >
                       <span
                         v-html="subItem.content"
@@ -192,16 +192,17 @@
     },
     data() {
       return {
+        state: this.$store.state,
         site: this.$store.state.site,
+        logoId: this.$store.state.site.logo,
+        siteName: this.$store.state.site.name,
         name: 'main',
       };
     },
     emits: ['toggleMenu'],
     computed: {
       logo() {
-        if (this.site.logo) {
-          return this.$store.getters.singleById({ type: 'media', id: this.site.logo });
-        }
+        return this.$store.getters.singleById({ type: 'media', id: this.logoId });
       },
       menu() {
         return this.$store.getters.menu({ name: this.name });
@@ -219,7 +220,7 @@
       },
     },
     created() {
-      console.log('TopPanel.vue > Created()');
+      console.log('TopPanel.vue > Created()', this.$store);
     },
   };
 </script>
