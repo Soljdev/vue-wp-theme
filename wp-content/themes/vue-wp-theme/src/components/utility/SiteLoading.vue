@@ -15,15 +15,40 @@
     name: 'SiteLoading',
     data() {
       return {
+        logo: false,
         logoId: this.$store.state.site.logo,
         siteName: this.$store.state.site.name,
+        requestLogo: {
+          type: 'media',
+          id: this.$store.state.site.logo,
+          batch: true,
+        },
       };
+    },
+    methods: {
+      getLogo() {
+          this.$store.dispatch('getSingleById', this.requestLogo);
+          console.log(this.$store)
+      },
+      checkMediaById(id) {
+        // if (this.$store.state.media.length > 0 ) {
+          return this.$store.state.media.find(item => item.id === this.logoId);
+        // } 
+        
+        // return false
+      }
     },
     computed: {
       logo() {
         return this.$store.getters.singleById({ type: 'media', id: this.logoId });
       },
     },
+    created() {
+      console.log('SiteLoading.vue > Created()', this.$store);
+      if (this.checkMediaById(this.logoId)) {
+        this.getLogo();
+      }
+    }
   };
 </script>
 
