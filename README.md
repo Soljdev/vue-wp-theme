@@ -9,7 +9,7 @@ Version 0.4
 * **Tailwind CSS 3.4.12** - утилитарный CSS-фреймворк для создания кастомных дизайнов
 * * https://v3.tailwindcss.com
 * **REST API Data Localizer** - встроенная поддержка локализации данных
-* * [https://gitverse.ru/solj/rest-api-data-localizer](https://github.com/bshiluk/rest-api-data-localizer) (submodule)
+* * [https://github.com/bshiluk/rest-api-data-localizer](https://github.com/bshiluk/rest-api-data-localizer) (submodule)
 * **Webpack** - модульная система сборки
 * **Модульная архитектура** - легко расширяемая структура проекта
 * **Оптимизированная производительность** - автоматическая оптимизация бандлов
@@ -157,6 +157,6 @@ vue-wp-theme/
 ## Зависимости
 * **Vue.js 3** - https://vuejs.org
 * **Tailwind CSS** - https://tailwindcss.com
-* **REST API Data Localizer** - [https://gitverse.ru/solj/rest-api-data-localizer](https://github.com/bshiluk/rest-api-data-localizer)
+* **REST API Data Localizer** - [https://github.com/bshiluk/rest-api-data-localizer](https://github.com/bshiluk/rest-api-data-localizer)
 * **Webpack** - https://webpack.js.org
 * **WordPress** - https://wordpress.org
